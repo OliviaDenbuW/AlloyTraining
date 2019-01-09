@@ -328,6 +328,7 @@
     <None Include="packages.config" />
     <Content Include="Views\StartPage\Index.cshtml" />
     <Content Include="Views\Shared\Layouts\_Root.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
