@@ -2,9 +2,12 @@
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
+using AlloyTraining.Business.ExtensionMethods;
 using AlloyTraining.Models.Pages;
+using AlloyTraining.Models.ViewModels;
 using EPiServer;
 using EPiServer.Core;
+using EPiServer.Filters;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Web.Mvc;
 
@@ -25,12 +28,21 @@ namespace AlloyTraining.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index");
         }
-        public ActionResult Index(SitePageData currentPage)
+        
+        protected IPageViewModel<TPage> CreatePageViewModel<TPage>
+            (TPage currentPage) where TPage : SitePageData
         {
-            /* Implementation of action. You can create your own view model class that you pass to the view or
-             * you can pass the page type for simpler templates */
+            var viewModel = PageViewModel.Create(currentPage);
 
-            return View(currentPage);
+            viewModel.StartPage = loader.Get<StartPage>(ContentReference.StartPage);
+
+            viewModel.MenuPages = FilterForVisitor.Filter(
+                loader.GetChildren<SitePageData>(ContentReference.StartPage))
+                .Cast<SitePageData>().Where(page => page.VisibleInMenu);
+
+            viewModel.Section = currentPage.ContentLink.GetSection();
+
+            return viewModel;
         }
     }
 }
