@@ -264,7 +264,6 @@
   <ItemGroup>
     <Folder Include="Models\Blocks\" />
     <Folder Include="Models\Properties\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="IndexingService\IndexingService.svc" />
@@ -328,6 +327,7 @@
     <Content Include="modules\_protected\CMS\CMS.zip" />
     <None Include="packages.config" />
     <Content Include="Views\StartPage\Index.cshtml" />
+    <Content Include="Views\Shared\Layouts\_Root.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
