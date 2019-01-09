@@ -12,6 +12,6 @@ namespace AlloyTraining.Models.ViewModels
 
         IEnumerable<SitePageData> MenuPages { get; }
 
-        IContent Section { get; }
+        IContent Section { get; } //Används för att veta vilken section ex Alloy Save Bears is in section About us
     }
 }
