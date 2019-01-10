@@ -12,6 +12,7 @@ namespace AlloyTraining.Models.Pages
                  GUID = "2c906ad8-2058-4f92-85fa-055bc502d85e",
                  Description = "Use this page type unless you need a more specialized one")]
     [SitePageIcon]
+    [AvailableContentTypes(Include = new[] { typeof(StandardPage) },         Exclude = new[] { typeof(ProductPage) })]
     public class StandardPage : SitePageData
     {
 

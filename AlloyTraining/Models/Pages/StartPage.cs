@@ -13,6 +13,7 @@ namespace AlloyTraining.Models.Pages
                  Order = 10,
                  Description = "The home page for a website with an area blocks and partial pages.")]
     [SiteStartIcon]
+    [AvailableContentTypes(Include = new[] { typeof(StandardPage) })]
     public class StartPage : SitePageData
     {
         [CultureSpecific]
