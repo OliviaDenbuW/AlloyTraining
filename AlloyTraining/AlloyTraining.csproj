@@ -354,6 +354,8 @@
     <Content Include="Views\Shared\ImageFile.cshtml" />
     <Content Include="Views\ContentFolder\Index.cshtml" />
     <Content Include="Views\Shared\Full.cshtml" />
+    <Content Include="Views\Shared\Wide.cshtml" />
+    <Content Include="Views\Shared\Narrow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
