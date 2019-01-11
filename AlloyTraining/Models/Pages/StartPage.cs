@@ -33,6 +33,14 @@ namespace AlloyTraining.Models.Pages
         public virtual XhtmlString MainBody { get; set; }
 
         [CultureSpecific]
+        [Display(Name = "Main content area",
+                 Description = "Drag and drop images, blocks, folders, and pages with partial templates.",
+                 GroupName = SystemTabNames.Content,
+                 Order = 30)]
+        [AllowedTypes(typeof(StandardPage), typeof(BlockData), typeof(ImageData), typeof(ContentFolder))]
+        public virtual ContentArea MainContentArea { get; set; }
+
+        [CultureSpecific]
         [Display(Name = "Footer text",
                  Description = "The footer text will be shown at the bottom of every page.",
                  GroupName = SiteTabNames.SiteSettings, Order = 10)]
