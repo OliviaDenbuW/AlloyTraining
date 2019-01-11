@@ -10,7 +10,7 @@ using EPiServer.Web.Mvc;
 
 namespace AlloyTraining.Controllers
 {
-    public class ContentFolderController : BlockController<ContentFolder>
+    public class ContentFolderController : PartialContentController<ContentFolder>
     {
         public override ActionResult Index(ContentFolder currentBlock)
         {
