@@ -1,5 +1,6 @@
 ﻿@using AlloyTraining.Models.ViewModels
 @using AlloyTraining.Models.Pages
+@using AlloyTraining
 @model PageViewModel<ProductPage>
 
 @{
@@ -19,6 +20,10 @@
     </div>
 </div>
 
+<div class="row">
+    @Html.PropertyFor(m => m.CurrentPage.MainContentArea, new { CssClass = "row equal-height", Tag = SiteTags.Wide })
+</div>
+
 @section RelatedContent
 {
     <div @Html.EditAttributes(x => x.CurrentPage.PageImage)>
@@ -34,5 +39,8 @@
                 <span class="label label-inverse">@usp</span>
             }
         </p>
+    </div>
+    <div class="row">
+        @Html.PropertyFor(m => m.CurrentPage.RelatedContentArea, new { CssClass = "row equal-height", Tag = SiteTags.Narrow })
     </div>
 }
