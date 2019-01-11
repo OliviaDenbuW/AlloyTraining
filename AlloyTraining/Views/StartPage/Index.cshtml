@@ -15,4 +15,7 @@
     @*@Html.DisplayFor(m => m.CurrentPage.MainBody)*@
     @Html.PropertyFor(m => m.CurrentPage.MainBody)
 </div>
+
+@Html.PropertyFor(m => m.CurrentPage.MainContentArea,
+ new { CssClass = "row equal-height" })
 @* Comment to enable git changes *@
