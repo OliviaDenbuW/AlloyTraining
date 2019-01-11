@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AlloyTraining.Models.ViewModels;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.Web;
@@ -12,9 +13,22 @@ namespace AlloyTraining.Controllers
 {
     public class ContentFolderController : PartialContentController<ContentFolder>
     {
-        public override ActionResult Index(ContentFolder currentBlock)
+        private readonly IContentLoader loader;
+
+        public ContentFolderController(IContentLoader loader)
         {
-            return PartialView(currentBlock);
+            this.loader = loader;
+        }
+
+        public override ActionResult Index(ContentFolder currentContent)
+        {
+            var viewmodel = new ContentFolderViewModel
+            {
+                CurrentFolder = currentContent,
+                ItemsCount = loader.GetChildren<IContent>
+            (currentContent.ContentLink).Count()
+            };
+            return PartialView(viewmodel);
         }
     }
 }
