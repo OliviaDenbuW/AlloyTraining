@@ -350,6 +350,7 @@
     <Content Include="Views\Shared\_NavigationMenu.cshtml" />
     <Content Include="Views\ProductPagePartial\Index.cshtml" />
     <Content Include="Views\Shared\ImageFile.cshtml" />
+    <Content Include="Views\ContentFolder\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
