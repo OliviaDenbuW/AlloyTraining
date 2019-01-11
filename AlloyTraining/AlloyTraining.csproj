@@ -346,6 +346,7 @@
     <Content Include="Views\Shared\Layouts\_RightRelatedContent.cshtml" />
     <Content Include="Views\ProductPage\Index.cshtml" />
     <Content Include="Views\Shared\_NavigationMenu.cshtml" />
+    <Content Include="Views\ProductPagePartial\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
