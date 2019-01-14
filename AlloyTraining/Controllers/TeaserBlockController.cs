@@ -28,8 +28,23 @@ namespace AlloyTraining.Controllers
         }
     }
 
-    [TemplateDescriptor(Tags = new[] { SiteTags.Full })]
+    [TemplateDescriptor(Tags = new[] { SiteTags.Wide })]
     public class TeaserBlockWideController : BlockController<TeaserBlock>
+    {
+        public override ActionResult Index(TeaserBlock currentBlock)
+        {
+            var viewModel = new TeaserBlockViewModel
+            {
+                CurrentBlock = currentBlock,
+                TodaysVisitorCount = (new Random()).Next(300, 900)
+            };
+
+            return PartialView(viewModel);
+        }
+    }
+
+    [TemplateDescriptor(Tags = new[] { SiteTags.Narrow })]
+    public class TeaserBlockNarrowController : BlockController<TeaserBlock>
     {
         public override ActionResult Index(TeaserBlock currentBlock)
         {
