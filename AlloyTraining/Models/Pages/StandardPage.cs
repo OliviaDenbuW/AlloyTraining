@@ -4,6 +4,7 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
+using AlloyTraining.Models.Blocks;
 
 namespace AlloyTraining.Models.Pages
 {
@@ -15,7 +16,6 @@ namespace AlloyTraining.Models.Pages
     [AvailableContentTypes(Include = new[] { typeof(StandardPage) },         Exclude = new[] { typeof(ProductPage) })]
     public class StandardPage : SitePageData
     {
-
         [CultureSpecific]
         [Display(
             Name = "Main body",
@@ -23,6 +23,8 @@ namespace AlloyTraining.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 150)]
         public virtual XhtmlString MainBody { get; set; }
+
+        public virtual EmployeeBlock Author { get; set; }
 
     }
 }
