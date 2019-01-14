@@ -252,6 +252,7 @@
     <Compile Include="Controllers\ContentFolderController.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\AllPagesPartialController.cs" />
+    <Compile Include="Controllers\PreviewPageController.cs" />
     <Compile Include="Controllers\ProductPagePartialController.cs" />
     <Compile Include="Controllers\ProductPageController.cs" />
     <Compile Include="Controllers\StandardPageController.cs" />
