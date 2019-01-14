@@ -251,6 +251,7 @@
     <Compile Include="Business\SelectionFactories\ThemeSelectionFactory.cs" />
     <Compile Include="Controllers\ContentFolderController.cs" />
     <Compile Include="Controllers\ListingBlockController.cs" />
+    <Compile Include="Controllers\NewsLandingPageController.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\AllPagesPartialController.cs" />
     <Compile Include="Controllers\PreviewPageController.cs" />
